@@ -1,0 +1,34 @@
+# .gitignore (raíz del proyecto)
+
+# Variables de entorno — NUNCA subir a GitHub
+.env
+.env.local
+.env.production
+.env.development
+!.env.example
+
+# Dependencias
+node_modules/
+
+# Logs
+logs/
+*.log
+
+# Build outputs
+dist/
+build/
+
+# ChromaDB local / índice de embeddings
+rag/embeddings/
+chroma_db/
+.venv-chroma/
+.model-cache/
+
+# PostgreSQL local de desarrollo (npm run db:dev)
+.dev-db/
+
+# Editor / SO
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+Thumbs.db

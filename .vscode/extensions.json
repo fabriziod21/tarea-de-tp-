@@ -1,0 +1,4 @@
+{
+  // VS Code recomienda instalar esto al abrir el proyecto (sí se sube a git)
+  "recommendations": ["ms-ossdata.vscode-pgsql"]
+}

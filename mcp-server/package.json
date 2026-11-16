@@ -1,0 +1,19 @@
+{
+  "name": "@chatbot/mcp-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MCP Server: herramientas list_tables, describe_table, get_relationships, run_readonly_query y consultar_reniec_dni",
+  "main": "src/lib.js",
+  "bin": {
+    "chatbot-mcp-server": "src/index.js"
+  },
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "dotenv": "^18.0.10",
+    "pg": "^8.23.1",
+    "zod": "^4.6.7"
+  }
+}

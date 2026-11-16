@@ -1,0 +1,40 @@
+{
+  "name": "ai-postgres-mcp-rag-chatbot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI Agent Chatbot con Claude + MCP Server + RAG + PostgreSQL + RENIEC (Taller de Proyecto URP)",
+  "workspaces": [
+    "mcp-server",
+    "rag",
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently -n chroma,api,web -c magenta,green,blue \"node scripts/chroma.mjs --if-needed\" \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+    "setup": "node scripts/setup-local.mjs",
+    "chroma": "node scripts/chroma.mjs",
+    "chroma:setup": "node scripts/chroma.mjs setup",
+    "start": "npm start -w backend",
+    "build": "npm run build -w frontend",
+    "db:dev": "node scripts/dev-db.mjs",
+    "db:apply": "node scripts/apply-sql.js",
+    "db:test": "node backend/scripts/test-db.js",
+    "rag:index": "npm run index -w rag",
+    "mcp": "node mcp-server/src/index.js",
+    "test": "node --test \"mcp-server/test/*.test.js\" \"backend/test/*.test.js\"",
+    "test:mcp": "node backend/scripts/test-mcp.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.7",
+    "embedded-postgres": "^17.11.0-beta.19"
+  },
+  "allowScripts": {
+    "onnxruntime-node@1.30.0": true,
+    "@firebase/util@1.15.3": true,
+    "protobufjs@7.6.6": true,
+    "@embedded-postgres/windows-x64@17.11.0-beta.19": true
+  }
+}
